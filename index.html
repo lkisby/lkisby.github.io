@@ -1,0 +1,32 @@
+---
+layout: default
+title: Start Cooking, Start Living
+home: true
+---
+ {% include search_recipes.html %}
+
+ <div class="container">
+    <div class="row">
+       {% for recipe in site.posts %}
+       <div class="grid" style="max-width: 358px">
+          <div>
+             <a href="{{ recipe.insta-link }}" target="_blank"><img style="max-width: 100%; max-height: 100%;" src="{{ recipe.img-src }}"></a>
+          </div>
+          <div class="row" style="padding-left:10px; padding-right:10px">
+             <div class="col-sm" style="min-width:60%">
+                <a style="font-family: times, serif; font-size:17pt">{{ recipe.title }}</a><br>
+                <div class="date-entry" style="padding-top: 5px; padding-left: 2px">
+                   {{ recipe.date | date_to_long_string }}
+                </div>
+             </div>
+             <div class="col-sm" style="text-align:right; padding:20px; min-width:40%">
+                <a style="text-align:right" class="view-recipe-button" href="{{ recipe.recipe-link }}"> View Recipe </a>
+             </div>
+          </div>
+          <div style="padding-left:10px; padding-right:10px; padding-top:10px; font-family: times, serif; font-size:12pt; text-align:justify">
+             {{ recipe.content }}
+          </div>
+       </div>
+       {% endfor %}
+    </div>
+ </div>

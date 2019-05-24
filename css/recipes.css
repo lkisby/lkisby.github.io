@@ -1,0 +1,60 @@
+a.view-recipe-button {
+	background-color: #3897f0;
+	border-radius: 3px;
+	color: #fff;
+	-webkit-flex-shrink: 0;
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+	font-weight: 600;
+	margin-left: auto;
+	padding: 5px 12px;
+	text-decoration: none;
+	text-align: center;
+}
+
+p.banner-title {
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size: 20pt;
+	text-align: center;
+	position: relative;
+}
+
+p.banner-author-text {
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size: 10pt;
+	text-align: center;
+	position: relative;
+}
+
+
+/* https://codepen.io/eversionsystems/pen/YOmqdj */
+
+.jumbotron {
+	color: white;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/images/header.jpg");
+	/* Set a specific height */
+	height: 25%;
+	/* Position and center the image to scale nicely on all screens */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+div.grid {
+	background: white;
+	width: calc(100% - 2px);
+	border-radius: 3px;
+	border: 0.5px solid rgb(219, 219, 219);
+	box-shadow: none;
+	display: block;
+	margin: 0px 10px 12px;
+	min-width: 326px;
+	padding: 0px;
+}
+
+div.date-entry {
+	font-family: 'Lato', sans-serif;
+	color: #545454;
+	font-style: italic;
+	font-size: 11px;
+}
