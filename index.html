@@ -10,18 +10,18 @@ pagination:
  <div class="container">
     <div class="row">
        {% for recipe in paginator.posts %}
-       <div class="grid" style="max-width: 358px">
+       <div class="grid col-sm" style="text-align: center">
           <div>
              <a href="{{ recipe.insta-link }}" target="_blank"><img style="max-width: 100%; max-height: 100%;" src="{{ site.url}}/{{ recipe.img-src }}"></a>
           </div>
           <div class="row" style="padding-left:10px; padding-right:10px">
-             <div class="col-sm">
+             <div class="col-sm" style="text-align:left;max-width:50%">
                 <a style="font-family: times, serif; font-size:17pt">{{ recipe.title }}</a><br>
                 <div class="date-entry" style="padding-top: 5px; padding-left: 2px">
                    {{ recipe.date | date_to_long_string }}
                 </div>
              </div>
-             <div class="col-sm" style="text-align:right; padding:20px">
+             <div class="col-sm" style="text-align:right; padding:20px;max-width:50%">
                 <a style="text-align:right" class="view-recipe-button" href="{{ recipe.recipe-link }}"> View Recipe </a>
              </div>
           </div>
