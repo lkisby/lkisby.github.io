@@ -9,7 +9,7 @@ layout: default
 </div>
 <script>
    window.store = { 
-     {% for post in site.posts %}
+     {% for post in site.categories.recipes %}
        "{{ post.title | slugify }}": {
          "title": "{{ post.title | xml_escape }}",
          "instaLink": "{{ post.insta-link | xml_escape }}",

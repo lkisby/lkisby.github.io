@@ -2,24 +2,26 @@
 layout: default
 title: Start Cooking, Start Living
 home: true
+pagination:
+  enabled: true
 ---
  {% include search_recipes.html %}
 
  <div class="container">
     <div class="row">
-       {% for recipe in site.posts %}
+       {% for recipe in paginator.posts %}
        <div class="grid" style="max-width: 358px">
           <div>
-             <a href="{{ recipe.insta-link }}" target="_blank"><img style="max-width: 100%; max-height: 100%;" src="{{ recipe.img-src }}"></a>
+             <a href="{{ recipe.insta-link }}" target="_blank"><img style="max-width: 100%; max-height: 100%;" src="{{ site.url}}/{{ recipe.img-src }}"></a>
           </div>
           <div class="row" style="padding-left:10px; padding-right:10px">
-             <div class="col-sm" style="min-width:60%">
+             <div class="col-sm" style="min-width:58%">
                 <a style="font-family: times, serif; font-size:17pt">{{ recipe.title }}</a><br>
                 <div class="date-entry" style="padding-top: 5px; padding-left: 2px">
                    {{ recipe.date | date_to_long_string }}
                 </div>
              </div>
-             <div class="col-sm" style="text-align:right; padding:20px; min-width:40%">
+             <div class="col-sm" style="text-align:right; padding:20px; min-width:42%">
                 <a style="text-align:right" class="view-recipe-button" href="{{ recipe.recipe-link }}"> View Recipe </a>
              </div>
           </div>
@@ -29,4 +31,27 @@ home: true
        </div>
        {% endfor %}
     </div>
+    {% if paginator.total_pages > 1 %}
+    <div class="pagination">
+       {% if paginator.previous_page %}
+       <a href="{{ paginator.previous_page_path | relative_url }}">&laquo; Prev</a>
+       {% else %}
+       <span>&laquo; Prev</span>
+       {% endif %}
+       {% for page in (1..paginator.total_pages) %}
+       {% if page == paginator.page %}
+       <em>{{ page }}</em>
+       {% elsif page == 1 %}
+       <a href="{{ paginator.previous_page_path | relative_url }}">{{ page }}</a>
+       {% else %}
+       <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
+       {% endif %}
+       {% endfor %}
+       {% if paginator.next_page %}
+       <a href="{{ paginator.next_page_path | relative_url }}">Next &raquo;</a>
+       {% else %}
+       <span>Next &raquo;</span>
+       {% endif %}
+    </div>
+    {% endif %}
  </div>
