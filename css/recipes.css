@@ -1,3 +1,8 @@
+html, body {
+    width: auto!important;
+    overflow-x: hidden!important;
+}
+
 a.view-recipe-button {
 	background-color: #3897f0;
 	border-radius: 3px;
